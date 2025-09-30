@@ -11,6 +11,10 @@ public class Aluno {
     private String cpf;
     private String telefone;
 
+    public Aluno(){
+
+    }
+
     public Aluno(int id, String nome, String email, String cpf, String telefone) {
         this.id = id;
         this.nome = nome;

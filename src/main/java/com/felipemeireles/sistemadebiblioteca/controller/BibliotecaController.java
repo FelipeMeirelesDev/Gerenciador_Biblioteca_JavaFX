@@ -21,7 +21,7 @@ public class BibliotecaController {
     @FXML private Button btnCadastrarAluno;
     @FXML private Button btnInicio;
     @FXML private Button btnListarLivros;
-    @FXML private Button btnEmprestarLivros, btnRelatorio;
+    @FXML private Button btnEmprestarLivros, btnDevolverLivros;
 
 
     // Lista para facilitar resetar as cores dos botões:
@@ -32,7 +32,7 @@ public class BibliotecaController {
         Navegador.setPainel(painelDeConteudo); // registra o painel para acesso global
 
         // ✅ Inicializa lista de botões ANTES de usar setBotaoAtivo
-        botoes = Arrays.asList(btnCadastrarAluno, btnInicio, btnListarLivros, btnEmprestarLivros, btnRelatorio);
+        botoes = Arrays.asList(btnCadastrarAluno, btnInicio, btnListarLivros, btnEmprestarLivros, btnDevolverLivros);
 
         try {
             Pane dashboard = FXMLLoader.load(getClass().getResource("/com/felipemeireles/sistemadebiblioteca/view/Dashboard.fxml"));
@@ -81,6 +81,13 @@ public class BibliotecaController {
         Parent tela2 = FXMLLoader.load(getClass().getResource("/com/felipemeireles/sistemadebiblioteca/view/Alunos.fxml"));
         painelDeConteudo.getChildren().setAll(tela2);
         setBotaoAtivo(btnCadastrarAluno);
+    }
+
+    @FXML
+    private void abrirTelaDevolucao(ActionEvent event) throws IOException {
+        Parent tela2 = FXMLLoader.load(getClass().getResource("/com/felipemeireles/sistemadebiblioteca/view/DevolverLivro.fxml"));
+        painelDeConteudo.getChildren().setAll(tela2);
+        setBotaoAtivo(btnDevolverLivros);
     }
 
     @FXML

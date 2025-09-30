@@ -37,7 +37,7 @@
                <children>
                   <AnchorPane prefHeight="509.0" prefWidth="316.0">
                      <children>
-                        <Button fx:id="btnRelatorio" layoutX="37.0" layoutY="356.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="📥 Devoluções" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="276.0">
+                        <Button fx:id="btnDevolverLivros" layoutX="37.0" layoutY="356.0" mnemonicParsing="false" onAction="#abrirTelaDevolucao" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="📥 Devoluções" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="276.0">
                            <font>
                               <Font name="SansSerif Bold" size="19.0" />
                            </font>
