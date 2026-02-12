@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.felipemeireles.sistemadebiblioteca.controller.AdicionarAlunoController">
+   <children>
+      <TableView fx:id="tabelaAlunos" layoutX="29.0" layoutY="304.0" prefHeight="331.0" prefWidth="626.0">
+        <columns>
+          <TableColumn fx:id="colunaId" prefWidth="57.59997367858887" text="Id" />
+          <TableColumn fx:id="colNome" prefWidth="211.20001983642578" text="Nome do Aluno" />
+            <TableColumn fx:id="colEmail" prefWidth="167.199951171875" text="E-Mail" />
+            <TableColumn fx:id="colCPF" prefWidth="99.99996948242188" text="CPF" />
+            <TableColumn fx:id="colTelefone" prefWidth="88.80002441406248" text="Telefone" />
+        </columns>
+      </TableView>
+      <Label layoutX="50.0" layoutY="16.0" text="Cadastrar Aluno" textFill="#1693a7">
+         <font>
+            <Font name="SansSerif Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="54.0" text="Nome do Aluno:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoNome" layoutX="29.0" layoutY="78.0" prefHeight="26.0" prefWidth="537.0" promptText="nome completo do aluno" />
+      <Label layoutX="29.0" layoutY="115.0" text="E-Mail:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoEmail" layoutX="29.0" layoutY="139.0" prefHeight="26.0" prefWidth="538.0" promptText="exemplo@email.com" />
+      <Label layoutX="29.0" layoutY="175.0" text="CPF:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoCPF" layoutX="29.0" layoutY="197.0" prefHeight="26.0" prefWidth="163.0" promptText="123.456.789-00" />
+      <Label layoutX="217.0" layoutY="175.0" text="Telefone:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoTelefone" layoutX="217.0" layoutY="197.0" prefHeight="26.0" prefWidth="177.0" promptText="(00) 1234-5678" />
+      <Button layoutX="29.0" layoutY="241.0" mnemonicParsing="false" onAction="#salvarAluno" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #1ee20f; -fx-border-color: black;" text="➕ CADASTRAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="243.0" layoutY="241.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="38.0" prefWidth="198.0" style="-fx-border-color: black; -fx-background-color: gray;" text="LIMPAR CAMPOS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="13.0" layoutY="11.0" mnemonicParsing="false" onAction="#voltarTela" prefHeight="32.0" prefWidth="33.0" style="-fx-background-color: #1693a7;" text="⬅" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

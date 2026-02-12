@@ -65,39 +65,6 @@ public class LivroDAO {
         }
     }
 
-    public Livro buscarPorId(int id) {
-        String sql = "SELECT * FROM livros WHERE id = ?";
-
-        try (Connection conn = ConexaoMySQL.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                Livro livro = new Livro(
-                        rs.getInt("id"),
-                        rs.getString("titulo"),
-                        rs.getString("autor"),
-                        rs.getInt("ano")
-                );
-                livro.setDisponibilidade(rs.getString("disponibilidade"));
-                return livro;
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Erro");
-            alerta.setHeaderText("Erro ao buscar livro");
-            alerta.setContentText(e.getMessage());
-            alerta.showAndWait();
-        }
-
-        return null; // Retorna null caso não encontre
-    }
-
-
     public ObservableList<Livro> listarLivros() {
         ObservableList<Livro> lista = FXCollections.observableArrayList();
         String sql = "SELECT * FROM livros";
@@ -121,24 +88,5 @@ public class LivroDAO {
         }
 
         return lista;
-    }
-
-    public int contarLivros() {
-
-        String sql = "SELECT COUNT(*) FROM livros";
-
-        try (Connection conn = ConexaoMySQL.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            if (rs.next()) {
-                return rs.getInt(1);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return 0;
     }
 }

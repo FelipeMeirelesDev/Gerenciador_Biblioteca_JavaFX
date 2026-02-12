@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.felipemeireles.sistemadebiblioteca.controller.AlunosController">
+   <children>
+      <Label layoutX="14.0" layoutY="30.0" text="🧑‍🎓 Alunos" textFill="#1693a7">
+         <font>
+            <Font name="SansSerif Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="499.0" layoutY="10.0" mnemonicParsing="false" onAction="#abrirTelaAdicionarAluno" prefHeight="29.0" prefWidth="160.0" style="-fx-background-color: #1693a7;" text="➕ Cadastrar Aluno" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="campoPesquisa" layoutX="228.0" layoutY="33.0" prefHeight="25.0" prefWidth="229.0" promptText="Pesquisar aluno" />
+      <Text fill="#1693a7" layoutX="198.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="🔍">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="499.0" layoutY="46.0" mnemonicParsing="false" onAction="#excluirAlunoSelecionado" prefHeight="29.0" prefWidth="160.0" style="-fx-background-color: orangered;" text="❌ Remover Aluno" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tabelaAlunos" layoutX="10.0" layoutY="92.0" prefHeight="551.0" prefWidth="666.0">
+         <columns>
+            <TableColumn fx:id="colunaId" prefWidth="57.59997367858887" text="Id" />
+            <TableColumn fx:id="colNome" prefWidth="232.0" text="Nome do Aluno" />
+            <TableColumn fx:id="colEmail" prefWidth="170.0" text="E-Mail" />
+            <TableColumn fx:id="colCPF" prefWidth="97.0" text="CPF" />
+            <TableColumn fx:id="colTelefone" prefWidth="108.0" text="Telefone" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
