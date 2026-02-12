@@ -31,7 +31,6 @@ public class BibliotecaController {
     public void initialize() {
 
         javafx.application.Platform.runLater(() -> {
-            System.out.println("Carregando Dashboard após inicialização da tela");
 
             try {
                 FXMLLoader loader = new FXMLLoader(
