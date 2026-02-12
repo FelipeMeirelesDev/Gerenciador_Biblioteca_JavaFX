@@ -30,23 +30,24 @@ public class BibliotecaController {
     @FXML
     public void initialize() {
 
-        javafx.application.Platform.runLater(() -> {
+        // REGISTRA O PAINEL PRINCIPAL UMA ÚNICA VEZ
+        Navegador.setPainel(painelDeConteudo);
 
-            try {
-                FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource(
-                                "/com/felipemeireles/sistemadebiblioteca/view/Dashboard.fxml"
-                        )
-                );
+        // CARREGA O DASHBOARD INICIAL
+        Navegador.trocarTela(
+                "/com/felipemeireles/sistemadebiblioteca/view/Dashboard.fxml"
+        );
 
-                Pane dashboard = loader.load();
-                painelDeConteudo.getChildren().setAll(dashboard);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+        // inicializa botões se quiser
+        botoes = Arrays.asList(
+                btnCadastrarAluno,
+                btnInicio,
+                btnListarLivros,
+                btnEmprestarLivros,
+                btnDevolverLivros
+        );
     }
+
 
     private void setBotaoAtivo(Button botaoAtivo) {
         for (Button btn : botoes) {

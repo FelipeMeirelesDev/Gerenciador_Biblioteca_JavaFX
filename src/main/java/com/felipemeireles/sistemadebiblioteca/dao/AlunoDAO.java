@@ -140,4 +140,24 @@ public class AlunoDAO {
         return null;
     }
 
+    public boolean cpfJaExiste(String cpf) {
+        String sql = "SELECT COUNT(*) FROM alunos WHERE cpf = ?";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, cpf);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
 }

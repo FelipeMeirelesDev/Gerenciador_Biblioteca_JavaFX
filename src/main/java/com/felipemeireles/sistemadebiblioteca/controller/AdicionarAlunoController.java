@@ -19,6 +19,18 @@ public class AdicionarAlunoController {
     private TextField campoNome, campoCPF, campoEmail, campoTelefone;
 
     @FXML private void salvarAluno() {
+        AlunoDAO dao = new AlunoDAO();
+
+        if (dao.cpfJaExiste(campoCPF.getText())) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("CPF duplicado");
+            alerta.setHeaderText(null);
+            alerta.setContentText("Já existe um aluno cadastrado com este CPF.");
+            alerta.showAndWait();
+            return;
+        }
+
+
         String nome = campoNome.getText();
         String email = campoEmail.getText();
         String cpf = campoCPF.getText();
@@ -52,7 +64,6 @@ public class AdicionarAlunoController {
         }
 
         Aluno aluno = new Aluno(nome,email,cpf,telefone);
-        AlunoDAO dao = new AlunoDAO();
         dao.adicionarAluno(aluno);
         inserirDadosTabela();
     }
