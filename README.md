@@ -1,5 +1,12 @@
 # 📚 Sistema de Gerenciamento de Biblioteca (JavaFX)
 
+<p align="center">
+  <img src="docs/prints/screenshot2.png" width="500">
+  <img src="docs/prints/screenshot1.png" width="500">
+</p>
+
+
+
 Este projeto é um **Sistema de Gerenciamento de Biblioteca Desktop**, desenvolvido em **Java com JavaFX** e banco de dados **MySQL**, seguindo o padrão **MVC (Model–View–Controller)**.
 
 O sistema permite o controle completo de alunos, livros, empréstimos e devoluções, além de exibir um **dashboard** com informações gerais da biblioteca.
