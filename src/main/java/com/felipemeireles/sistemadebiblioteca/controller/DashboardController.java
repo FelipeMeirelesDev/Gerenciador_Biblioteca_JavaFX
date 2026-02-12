@@ -19,6 +19,7 @@ public class DashboardController {
 
     @FXML
     public void initialize() {
+        System.out.println("Dashboard initialize chamado");
         carregarDados();
     }
 
@@ -29,5 +30,11 @@ public class DashboardController {
                 String.valueOf(emprestimoDAO.contarEmprestimosPendentes())
         );
     }
+
+
+    public DashboardController() {
+        System.out.println("DashboardController criado");
+    }
+
 }
 

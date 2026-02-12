@@ -93,4 +93,51 @@ public class AlunoDAO {
 
         return lista;
     }
+
+    public int contarAlunos() {
+
+        String sql = "SELECT COUNT(*) FROM alunos";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    public Aluno buscarPorCpf(String cpf) {
+
+        String sql = "SELECT * FROM alunos WHERE cpf = ?";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, cpf);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Aluno aluno = new Aluno();
+                aluno.setId(rs.getInt("id"));
+                aluno.setNome(rs.getString("nome"));
+                aluno.setEmail(rs.getString("email"));
+                aluno.setCpf(rs.getString("cpf"));
+                aluno.setTelefone(rs.getString("telefone"));
+                return aluno;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }

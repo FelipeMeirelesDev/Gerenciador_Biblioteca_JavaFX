@@ -29,18 +29,24 @@ public class BibliotecaController {
 
     @FXML
     public void initialize() {
-        Navegador.setPainel(painelDeConteudo); // registra o painel para acesso global
 
-        // ✅ Inicializa lista de botões ANTES de usar setBotaoAtivo
-        botoes = Arrays.asList(btnCadastrarAluno, btnInicio, btnListarLivros, btnEmprestarLivros, btnDevolverLivros);
+        javafx.application.Platform.runLater(() -> {
+            System.out.println("Carregando Dashboard após inicialização da tela");
 
-        try {
-            Pane dashboard = FXMLLoader.load(getClass().getResource("/com/felipemeireles/sistemadebiblioteca/view/Dashboard.fxml"));
-            painelDeConteudo.getChildren().setAll(dashboard);
-            setBotaoAtivo(btnInicio);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            try {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "/com/felipemeireles/sistemadebiblioteca/view/Dashboard.fxml"
+                        )
+                );
+
+                Pane dashboard = loader.load();
+                painelDeConteudo.getChildren().setAll(dashboard);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void setBotaoAtivo(Button botaoAtivo) {

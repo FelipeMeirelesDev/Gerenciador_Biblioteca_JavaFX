@@ -23,6 +23,8 @@ public class Livro {
         this.disponibilidade = "disponivel";
     }
 
+    public Livro(){}
+
     public int getId() {
         return id;
     }

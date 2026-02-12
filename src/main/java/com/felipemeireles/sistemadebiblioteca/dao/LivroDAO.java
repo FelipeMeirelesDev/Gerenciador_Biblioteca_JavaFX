@@ -89,4 +89,51 @@ public class LivroDAO {
 
         return lista;
     }
+
+    public int contarLivros() {
+
+        String sql = "SELECT COUNT(*) FROM livros";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    public Livro buscarPorId(int id) {
+
+        String sql = "SELECT * FROM livros WHERE id = ?";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Livro livro = new Livro();
+                livro.setId(rs.getInt("id"));
+                livro.setTitulo(rs.getString("titulo"));
+                livro.setAutor(rs.getString("autor"));
+                livro.setAno(rs.getInt("ano"));
+                livro.setDisponibilidade(rs.getString("disponibilidade"));
+                return livro;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }

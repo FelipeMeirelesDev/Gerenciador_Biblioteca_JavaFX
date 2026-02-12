@@ -26,6 +26,8 @@ public class Aluno {
         this.telefone = telefone;
     }
 
+    public Aluno(){}
+
     public int getId() {
         return id;
     }
