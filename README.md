@@ -1,8 +1,8 @@
 # 📚 Sistema de Gerenciamento de Biblioteca (JavaFX)
 
 <p align="center">
-  <img src="docs/prints/screenshot2.png" width="400">
-  <img src="docs/prints/screenshot1.png" width="400">
+  <img src="docs/prints/screenshot2.png" width="420">
+  <img src="docs/prints/screenshot1.png" width="420">
 </p>
 
 
