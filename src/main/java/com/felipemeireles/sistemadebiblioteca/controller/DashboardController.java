@@ -31,10 +31,5 @@ public class DashboardController {
         );
     }
 
-
-    public DashboardController() {
-        System.out.println("DashboardController criado");
-    }
-
 }
 
