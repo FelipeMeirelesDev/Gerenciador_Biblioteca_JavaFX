@@ -125,4 +125,24 @@ public class AlunoDAO {
         return null; // Retorna null se não encontrar o aluno
     }
 
+    public int contarAlunos() {
+
+        String sql = "SELECT COUNT(*) FROM alunos";
+
+        try (Connection conn = ConexaoMySQL.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+
 }

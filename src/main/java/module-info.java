@@ -2,6 +2,7 @@ module com.felipemeireles.sistemadebiblioteca {
     requires javafx.controls;
     requires javafx.fxml;
     requires jakarta.persistence;
+    requires java.desktop;
 
 
     opens com.felipemeireles.sistemadebiblioteca to javafx.fxml;
