@@ -133,18 +133,6 @@ SELECT * FROM emprestimos;
 
 ---
 
-## 🔌 Configuração da Conexão com o Banco
-
-Configure corretamente a classe de conexão JDBC com os dados do seu MySQL (src/main/java/com/felipemeireles/sistemadebiblioteca/database/ConexaoMySQL.java):
-
-```java
-String url = "jdbc:mysql://localhost:3306/DB_BIBLIOTECA";
-String usuario = "root";
-String senha = "sua_senha";
-```
-
----
-
 ## 🚀 Como Executar o Projeto
 
 ### 1️⃣ Clonar o repositório
@@ -160,7 +148,15 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 - Escolha o projeto Maven
 - Aguarde o download das dependências
 
-### 3️⃣ Executar a aplicação
+### 3️⃣ Configuração da Conexão com o Banco de Dados
+Configure corretamente a classe de conexão JDBC com os dados do seu MySQL
+(src/main/java/com/felipemeireles/sistemadebiblioteca/database/ConexaoMySQL.java):
+```java
+String url = "jdbc:mysql://localhost:3306/DB_BIBLIOTECA";
+String usuario = "root";
+String senha = "sua_senha";
+```
+### 4️⃣ Executar a aplicação
 
 - Execute a classe principal do projeto (src/main/java/com/felipemeireles/sistemadebiblioteca/Application.java)
 - O sistema será iniciado com a interface gráfica
