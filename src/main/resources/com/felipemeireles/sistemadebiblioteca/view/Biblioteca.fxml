@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.felipemeireles.sistemadebiblioteca.controller.BibliotecaController">
+   <children>
+      <VBox prefHeight="650.0" prefWidth="316.0" style="-fx-background-color: #1693a7;">
+         <children>
+            <Pane prefHeight="142.0" prefWidth="316.0">
+               <children>
+                  <ImageView fitHeight="125.0" fitWidth="115.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/LogoBiblioteca.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="138.0" layoutY="48.0" text="Biblioteca" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="163.0" layoutY="92.0" text="JavaFX" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="509.0" prefWidth="316.0">
+               <children>
+                  <AnchorPane prefHeight="509.0" prefWidth="316.0">
+                     <children>
+                        <Button fx:id="btnDevolverLivros" layoutX="37.0" layoutY="356.0" mnemonicParsing="false" onAction="#abrirTelaDevolucao" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="📥 Devoluções" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="276.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnCadastrarAluno" layoutX="37.0" layoutY="276.0" mnemonicParsing="false" onAction="#abrirTelaAlunos" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="🧑‍🎓 Alunos" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="356.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnSair" layoutX="37.0" layoutY="436.0" mnemonicParsing="false" onAction="#sair" prefHeight="43.0" prefWidth="242.0" style="-fx-background-color: red; -fx-border-color: white;" text="⬅ Sair" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="436.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnListarLivros" layoutX="37.0" layoutY="116.0" mnemonicParsing="false" onAction="#abrirTelaListarLivros" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="📖 Livros" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="116.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnInicio" alignment="CENTER" layoutX="37.0" layoutY="36.0" mnemonicParsing="false" onAction="#abrirDashboard" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: White; -fx-background-color: white; -fx-text-fill: #0a6789;" text="🏠 Inicío" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="36.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnEmprestarLivros" layoutX="37.0" layoutY="196.0" mnemonicParsing="false" onAction="#abrirEmprestarLivro" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: white; -fx-background-color: white; -fx-text-fill: #0a6789;" text="🔄 Empréstimos" textFill="WHITE" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="196.0">
+                           <font>
+                              <Font name="SansSerif Bold" size="19.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Pane fx:id="painelDeConteudo" layoutX="316.0" prefHeight="650.0" prefWidth="684.0" />
+   </children>
+</Pane>

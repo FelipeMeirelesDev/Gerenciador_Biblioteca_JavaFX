@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.felipemeireles.sistemadebiblioteca.controller.LivrosController">
+   <children>
+      <TableView fx:id="tabelaLivros" layoutX="9.0" layoutY="84.0" prefHeight="562.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="colunaId" prefWidth="57.59997367858887" text="Id" />
+          <TableColumn fx:id="colTitulo" prefWidth="228.0" text="Título" />
+            <TableColumn fx:id="colAutor" prefWidth="118.0" text="Autor" />
+            <TableColumn fx:id="colAno" prefWidth="99.0" text="Ano" />
+            <TableColumn fx:id="colDisponibilidade" prefWidth="164.0" text="Disponibilidade" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="30.0" text="📚 Livros" textFill="#1693a7">
+         <font>
+            <Font name="SansSerif Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="499.0" layoutY="10.0" mnemonicParsing="false" onAction="#abrirTelaAdicionarLivro" style="-fx-background-color: #1693a7;" text="📖 Adicionar Livro" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="campoPesquisa" layoutX="228.0" layoutY="33.0" onKeyReleased="#filtrarLivros" prefHeight="25.0" prefWidth="229.0" promptText="Pesquisar livro" />
+      <Text fill="#1693a7" layoutX="198.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="🔍">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="499.0" layoutY="46.0" mnemonicParsing="false" onAction="#excluirLivroSelecionado" prefHeight="29.0" prefWidth="147.0" style="-fx-background-color: orangered;" text="❌ Apagar" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

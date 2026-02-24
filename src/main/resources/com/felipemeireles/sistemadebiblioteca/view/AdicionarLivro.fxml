@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.felipemeireles.sistemadebiblioteca.controller.AdicionarLivroController">
+   <children>
+      <TableView fx:id="tabelaLivros" layoutX="29.0" layoutY="240.0" prefHeight="395.0" prefWidth="626.0">
+        <columns>
+          <TableColumn fx:id="colunaId" prefWidth="57.59997367858887" text="Id" />
+          <TableColumn fx:id="colTitulo" prefWidth="266.0" text="Título" />
+            <TableColumn fx:id="colAutor" prefWidth="206.0" text="Autor" />
+            <TableColumn fx:id="colAno" minWidth="0.0" prefWidth="95.0" text="Ano" />
+        </columns>
+      </TableView>
+      <Label layoutX="58.0" layoutY="14.0" text="Adicionar Livro" textFill="#1693a7">
+         <font>
+            <Font name="SansSerif Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="94.0" text="Título:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoTitulo" layoutX="90.0" layoutY="91.0" prefHeight="26.0" prefWidth="560.0" />
+      <Label layoutX="31.0" layoutY="145.0" text="Autor:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoAutor" layoutX="90.0" layoutY="143.0" prefHeight="26.0" prefWidth="274.0" />
+      <Label layoutX="370.0" layoutY="146.0" text="Ano:">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="campoAno" layoutX="421.0" layoutY="143.0" prefHeight="26.0" prefWidth="222.0" />
+      <Button layoutX="31.0" layoutY="189.0" mnemonicParsing="false" onAction="#salvarLivro" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #1ee20f; -fx-border-color: black;" text="➕ CADASTRAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="237.0" layoutY="189.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="38.0" prefWidth="198.0" style="-fx-border-color: black; -fx-background-color: orange;" text="LIMPAR CAMPOS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Pane layoutY="63.0" prefHeight="4.0" prefWidth="684.0" style="-fx-background-color: #1693a7;" />
+      <Button layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#voltarTela" style="-fx-background-color: #1693a7;" text="⬅" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
