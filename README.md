@@ -108,7 +108,8 @@ CREATE TABLE alunos (
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) NOT NULL UNIQUE,
-    telefone VARCHAR(255) NOT NULL
+    telefone VARCHAR(255) NOT NULL,
+    ativo BOOLEAN DEFAULT TRUE
 ) ENGINE=InnoDB;
 
 CREATE TABLE emprestimos (
